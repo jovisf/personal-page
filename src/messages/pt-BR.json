@@ -1,0 +1,88 @@
+{
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre mim",
+    "timeline": "Trajetória",
+    "stacks": "Stacks",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Construindo software com propósito",
+    "subtitle": "Engenharia de Software • Desenvolvimento Seguro • Web",
+    "description": "Sou João Victor, desenvolvedor de software e estudante de Ciência da Computação pela UFPE. Trabalho na construção de aplicações web robustas, unindo engenharia de software, boas práticas e forte preocupação com segurança da informação e proteção de dados."
+  },
+  "about": {
+    "title": "Sobre mim",
+    "paragraphs": [
+      "Sou estudante de Ciência da Computação na Universidade Federal de Pernambuco (UFPE) e desenvolvedor de software com experiência prática em aplicações web, APIs e sistemas utilizados por usuários reais.",
+      "Minha base é Engenharia de Software: arquitetura, qualidade de código, manutenção, escalabilidade e boas práticas fazem parte do meu dia a dia como desenvolvedor.",
+      "Paralelamente, venho me aprofundando cada vez mais em Segurança da Informação e desenvolvimento seguro, com atenção especial à proteção de dados, controle de acesso, princípio do menor privilégio, autenticação, autorização e conformidade.",
+      "Acredito que software bem construído precisa ser funcional, sustentável e seguro. Por isso, busco sempre alinhar engenharia sólida com uma mentalidade de segurança desde o início do desenvolvimento."
+    ],
+    "hobbiesTitle": "Além do código",
+    "hobbies": [
+      "Sou apaixonado por futebol e acompanho todos os jogos do Sport Club do Recife e do Barcelona.",
+      "Gosto muito de leitura, especialmente fantasia. Já li obras como Duna, As Crônicas de Gelo e Fogo, O Senhor dos Anéis, Harry Potter, entre outras.",
+      "Também sou fã de heróis e cinema — sem rivalidade entre Marvel e DC, aproveito o melhor dos dois universos.",
+      "Esses interesses fazem parte de quem eu sou e ajudam a manter criatividade, curiosidade e equilíbrio fora do código."
+    ]
+  },
+  "timeline": {
+    "title": "Minha trajetória",
+    "events": [
+      {
+        "title": "Ingresso na Universidade Federal de Pernambuco",
+        "year": "2020",
+        "description": "Entrada no curso de Ciência da Computação no Centro de Informática da UFPE (CIn-UFPE), marcando o início da minha formação acadêmica e contato aprofundado com computação e engenharia de software."
+      },
+      {
+        "title": "Monitor de Lógica para Computação",
+        "year": "2021",
+        "description": "Atuação como monitor da disciplina de Lógica para Computação, auxiliando alunos, reforçando fundamentos e desenvolvendo habilidades de comunicação, liderança e didática."
+      },
+      {
+        "title": "Membro do PET Informática",
+        "year": "2022",
+        "description": "Ingresso no Programa de Educação Tutorial (PET Informática), participando de projetos acadêmicos, eventos, sistemas web e iniciativas educacionais."
+      },
+      {
+        "title": "Projeto RECIPREV",
+        "year": "2023",
+        "description": "Atuação no desenvolvimento e manutenção de sistemas para o RECIPREV, trabalhando com aplicações reais, controle de acesso, integração de sistemas e preocupação com segurança e confiabilidade."
+      },
+      {
+        "title": "Desenvolvedor Full Stack na CozexTech",
+        "year": "2024",
+        "description": "Ingresso como desenvolvedor full stack na CozexTech, atuando em aplicações web, APIs, arquitetura, otimizações, desenvolvimento seguro e boas práticas de engenharia de software."
+      }
+    ]
+  },
+  "stacks": {
+    "title": "Stacks e conhecimentos",
+    "technologiesTitle": "Tecnologias",
+    "certificatesTitle": "Certificados",
+    "technologies": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "Git"
+    ],
+    "certificates": [
+      "Cybersecurity & Endpoint Security (Cisco)",
+      "Digital Forensics & Cyber Investigation (Tempest)",
+      "Cloud Computing Foundations (Google Cloud)"
+    ]
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Se quiser conversar sobre tecnologia, engenharia de software, segurança da informação ou oportunidades profissionais, fique à vontade para entrar em contato comigo.",
+    "emailLabel": "Enviar um e-mail"
+  },
+  "footer": {
+    "text": "Este site foi desenvolvido por mim."
+  }
+}

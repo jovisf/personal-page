@@ -1,0 +1,88 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Me",
+    "timeline": "Timeline",
+    "stacks": "Stacks",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Building software with purpose",
+    "subtitle": "Software Engineering • Secure Development • Web",
+    "description": "I'm João Victor, a software developer and Computer Science student at UFPE. I work on building robust web applications, combining software engineering, best practices, and a strong focus on information security and data protection."
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm a Computer Science student at the Federal University of Pernambuco (UFPE) and a software developer with hands-on experience in web applications, APIs, and systems used by real users.",
+      "My foundation is Software Engineering: architecture, code quality, maintainability, scalability, and best practices are part of my daily work as a developer.",
+      "In parallel, I've been diving deeper into Information Security and secure development, with special attention to data protection, access control, principle of least privilege, authentication, authorization, and compliance.",
+      "I believe that well-built software needs to be functional, sustainable, and secure. That's why I always seek to align solid engineering with a security-first mindset from the start of development."
+    ],
+    "hobbiesTitle": "Beyond code",
+    "hobbies": [
+      "I'm passionate about football and follow all matches of Sport Club do Recife and Barcelona.",
+      "I love reading, especially fantasy. I've read works like Dune, A Song of Ice and Fire, The Lord of the Rings, Harry Potter, among others.",
+      "I'm also a fan of superheroes and cinema — no rivalry between Marvel and DC, I enjoy the best of both universes.",
+      "These interests are part of who I am and help me maintain creativity, curiosity, and balance outside of code."
+    ]
+  },
+  "timeline": {
+    "title": "My Journey",
+    "events": [
+      {
+        "title": "Admission to Federal University of Pernambuco",
+        "year": "2020",
+        "description": "Started the Computer Science program at UFPE's Center for Informatics (CIn-UFPE), marking the beginning of my academic training and in-depth contact with computing and software engineering."
+      },
+      {
+        "title": "Teaching Assistant for Logic for Computing",
+        "year": "2021",
+        "description": "Worked as a teaching assistant for the Logic for Computing course, helping students, reinforcing fundamentals, and developing communication, leadership, and teaching skills."
+      },
+      {
+        "title": "Member of PET Informatics",
+        "year": "2022",
+        "description": "Joined the Tutorial Education Program (PET Informatics), participating in academic projects, events, web systems, and educational initiatives."
+      },
+      {
+        "title": "RECIPREV Project",
+        "year": "2023",
+        "description": "Worked on the development and maintenance of systems for RECIPREV, dealing with real applications, access control, system integration, and a focus on security and reliability."
+      },
+      {
+        "title": "Full Stack Developer at CozexTech",
+        "year": "2024",
+        "description": "Joined as a full stack developer at CozexTech, working on web applications, APIs, architecture, optimizations, secure development, and software engineering best practices."
+      }
+    ]
+  },
+  "stacks": {
+    "title": "Stacks and knowledge",
+    "technologiesTitle": "Technologies",
+    "certificatesTitle": "Certificates",
+    "technologies": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "Git"
+    ],
+    "certificates": [
+      "Cybersecurity & Endpoint Security (Cisco)",
+      "Digital Forensics & Cyber Investigation (Tempest)",
+      "Cloud Computing Foundations (Google Cloud)"
+    ]
+  },
+  "contact": {
+    "title": "Get in touch",
+    "description": "If you'd like to talk about technology, software engineering, information security, or professional opportunities, feel free to reach out.",
+    "emailLabel": "Send an email"
+  },
+  "footer": {
+    "text": "This website was developed by me."
+  }
+}
