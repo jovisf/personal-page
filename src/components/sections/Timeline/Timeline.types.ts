@@ -6,4 +6,6 @@ export interface TimelineEvent {
   title: string
   year: string
   description: string
+  logo?: string
+  alt?: string
 }

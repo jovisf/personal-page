@@ -29,31 +29,43 @@
   },
   "timeline": {
     "title": "My Journey",
+    "instructionDesktop": "Hover over the points to see details",
+    "instructionMobile": "Tap the points to see details",
     "events": [
       {
         "title": "Admission to Federal University of Pernambuco",
         "year": "2020",
-        "description": "Started the Computer Science program at UFPE's Center for Informatics (CIn-UFPE), marking the beginning of my academic training and in-depth contact with computing and software engineering."
+        "description": "Started the Computer Science program at UFPE's Center for Informatics (CIn-UFPE), marking the beginning of my academic training and in-depth contact with computing and software engineering.",
+        "logo": "/assets/CinUFPE Logo.png",
+        "alt": "UFPE Center for Informatics Logo"
       },
       {
         "title": "Teaching Assistant for Logic for Computing",
         "year": "2021",
-        "description": "Worked as a teaching assistant for the Logic for Computing course, helping students, reinforcing fundamentals, and developing communication, leadership, and teaching skills."
+        "description": "Worked as a teaching assistant for the Logic for Computing course, helping students, reinforcing fundamentals, and developing communication, leadership, and teaching skills.",
+        "logo": "/assets/CinUFPE Logo.png",
+        "alt": "UFPE Center for Informatics Logo"
       },
       {
         "title": "Member of PET Informatics",
         "year": "2022",
-        "description": "Joined the Tutorial Education Program (PET Informatics), participating in academic projects, events, web systems, and educational initiatives."
+        "description": "Joined the Tutorial Education Program (PET Informatics), participating in academic projects, events, web systems, and educational initiatives.",
+        "logo": "/assets/PET.png",
+        "alt": "PET Informatics Logo"
       },
       {
         "title": "RECIPREV Project",
         "year": "2023",
-        "description": "Worked on the development and maintenance of systems for RECIPREV, dealing with real applications, access control, system integration, and a focus on security and reliability."
+        "description": "Worked on the development and maintenance of systems for RECIPREV, dealing with real applications, access control, system integration, and a focus on security and reliability.",
+        "logo": "/assets/RECIPREV.png",
+        "alt": "RECIPREV Logo"
       },
       {
         "title": "Full Stack Developer at CozexTech",
         "year": "2024",
-        "description": "Joined as a full stack developer at CozexTech, working on web applications, APIs, architecture, optimizations, secure development, and software engineering best practices."
+        "description": "Joined as a full stack developer at CozexTech, working on web applications, APIs, architecture, optimizations, secure development, and software engineering best practices.",
+        "logo": "/assets/cozex_tech_logo.png",
+        "alt": "CozexTech Logo"
       }
     ]
   },
