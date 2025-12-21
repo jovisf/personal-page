@@ -1,6 +1,6 @@
-export interface TimelineProps {
-  className?: string
-}
+import { BaseSectionProps } from '@/types/common'
+
+export interface TimelineProps extends BaseSectionProps {}
 
 export interface TimelineEvent {
   title: string
