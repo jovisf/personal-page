@@ -1,11 +1,13 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useState, useTransition, useRef, useMemo } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/lib/navigation'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
+import { useActiveSection } from '@/hooks/useActiveSection'
+import { useMarkerPosition } from '@/hooks/useMarkerPosition'
 import type { HeaderProps } from './Header.types'
 
 export function Header({ className }: HeaderProps) {
@@ -25,6 +27,11 @@ export function Header({ className }: HeaderProps) {
     { label: t('contact'), anchor: 'contact' },
   ]
 
+  const sectionIds = useMemo(() => ['hero', 'about', 'timeline', 'stacks', 'contact'], [])
+  const activeSection = useActiveSection(sectionIds)
+  const navRefs = useRef<(HTMLButtonElement | null)[]>([])
+  const markerStyle = useMarkerPosition(sectionIds, navRefs)
+
   const handleNavClick = (anchor: string) => {
     const element = document.getElementById(anchor)
     if (element) {
@@ -36,7 +43,6 @@ export function Header({ className }: HeaderProps) {
   const handleLocaleChange = (newLocale: string) => {
     if (newLocale === locale) return
 
-    // Use the locale-aware router from next-intl
     router.replace('/', { locale: newLocale })
     router.refresh()
   }
@@ -65,16 +71,39 @@ export function Header({ className }: HeaderProps) {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 relative">
             {navigationItems.map((item, index) => (
               <button
                 key={index}
+                ref={(el) => { navRefs.current[index] = el }}
                 onClick={() => handleNavClick(item.anchor)}
-                className="font-tilda font-medium text-sm uppercase tracking-wide text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
+                className={cn(
+                  "font-tilda font-medium text-sm uppercase tracking-wide transition-colors relative",
+                  activeSection === item.anchor
+                    ? "text-light-primary-accent dark:text-dark-primary-accent"
+                    : "text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent"
+                )}
               >
                 {item.label}
               </button>
             ))}
+
+            {/* Animated Marker */}
+            {activeSection && markerStyle.width > 0 && (
+              <motion.div
+                className="absolute bottom-0 h-0.5 bg-light-primary-accent dark:bg-dark-primary-accent"
+                initial={false}
+                animate={{
+                  left: markerStyle.left,
+                  width: markerStyle.width,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              />
+            )}
 
             {/* Theme Toggle */}
             <button
