@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import {
   cardBackgroundVariants,
@@ -18,9 +19,29 @@ export function TimelineEventCard({
   onMouseEnter,
   onMouseLeave,
 }: TimelineEventCardProps) {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'))
+    }
+
+    checkDarkMode()
+
+    const observer = new MutationObserver(checkDarkMode)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   const cardAnimationProps = prefersReducedMotion
     ? {}
     : { initial: 'hidden' as const, animate: 'visible' as const, exit: 'exit' as const }
+
+  const logoSrc = isDarkMode && event.logoDark ? event.logoDark : event.logo
 
   return (
     <motion.div
@@ -88,14 +109,14 @@ export function TimelineEventCard({
         className="relative z-10"
       >
         {/* Logo */}
-        {event.logo && event.alt && (
+        {logoSrc && event.alt && (
           <div className="mb-4 flex justify-center">
-            <div className="relative w-20 h-20 bg-light-background dark:bg-dark-background p-2 border-3 border-light-primary-accent dark:border-dark-primary-accent">
+            <div className="relative w-24 h-24 bg-light-background dark:bg-dark-background border-3 border-light-primary-accent dark:border-dark-primary-accent overflow-hidden">
               <Image
-                src={event.logo}
+                src={logoSrc}
                 alt={event.alt}
                 fill
-                className="object-contain p-1"
+                className="object-contain"
               />
             </div>
           </div>

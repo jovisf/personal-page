@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useScrollObserver } from '@/hooks/useScrollObserver'
 import { useBreakpoint } from '@/hooks/useBreakpoint'
 import { cn } from '@/lib/utils'
+import { TIMELINE_EVENTS } from '@/data/timeline.data'
 import { fadeInUp, staggerContainer } from './timeline.animations'
 import { TimelineEventPoint } from './TimelineEventPoint'
 import { TimelineEventCard } from './TimelineEventCard'
@@ -26,43 +27,14 @@ export function Timeline({ className }: TimelineProps) {
     ? {}
     : { initial: 'hidden', animate: isVisible ? 'visible' : 'hidden' }
 
-  const events: TimelineEvent[] = [
-    {
-      title: t('events.0.title'),
-      year: t('events.0.year'),
-      description: t('events.0.description'),
-      logo: t('events.0.logo'),
-      alt: t('events.0.alt'),
-    },
-    {
-      title: t('events.1.title'),
-      year: t('events.1.year'),
-      description: t('events.1.description'),
-      logo: t('events.1.logo'),
-      alt: t('events.1.alt'),
-    },
-    {
-      title: t('events.2.title'),
-      year: t('events.2.year'),
-      description: t('events.2.description'),
-      logo: t('events.2.logo'),
-      alt: t('events.2.alt'),
-    },
-    {
-      title: t('events.3.title'),
-      year: t('events.3.year'),
-      description: t('events.3.description'),
-      logo: t('events.3.logo'),
-      alt: t('events.3.alt'),
-    },
-    {
-      title: t('events.4.title'),
-      year: t('events.4.year'),
-      description: t('events.4.description'),
-      logo: t('events.4.logo'),
-      alt: t('events.4.alt'),
-    },
-  ]
+  const events: TimelineEvent[] = TIMELINE_EVENTS.map((eventData) => ({
+    title: t(`events.${eventData.id}.title`),
+    year: eventData.year,
+    description: t(`events.${eventData.id}.description`),
+    logo: eventData.logo,
+    logoDark: eventData.logoDark,
+    alt: eventData.alt,
+  }))
 
   const handleEventClick = (index: number) => {
     setActiveEvent(activeEvent === index ? null : index)
