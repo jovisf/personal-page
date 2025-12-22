@@ -21,10 +21,12 @@ export function Button({
   children,
   onClick,
   disabled = false,
+  type = 'button',
   className,
 }: ButtonProps) {
   return (
     <button
+      type={type}
       onClick={onClick}
       disabled={disabled}
       className={cn(

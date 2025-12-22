@@ -1,11 +1,16 @@
 'use client'
 
+import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { useScrollObserver } from '@/hooks/useScrollObserver'
 import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { Textarea } from '@/components/ui/Textarea'
 import { cn } from '@/lib/utils'
 import type { ContactProps } from './Contact.types'
+import { createContactFormSchema } from './Contact.schema'
+import type { ContactFormData } from './Contact.schema'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,18 +21,23 @@ const fadeInUp = {
   },
 }
 
-const scaleIn = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
-  },
+interface FormErrors {
+  email?: string
+  subject?: string
+  message?: string
 }
 
 export function Contact({ className }: ContactProps) {
   const t = useTranslations('contact')
   const [ref, isVisible] = useScrollObserver<HTMLElement>({ threshold: 0.3 })
+
+  const [formData, setFormData] = useState<ContactFormData>({
+    email: '',
+    subject: '',
+    message: '',
+  })
+
+  const [errors, setErrors] = useState<FormErrors>({})
 
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
@@ -37,8 +47,51 @@ export function Contact({ className }: ContactProps) {
     ? {}
     : { initial: 'hidden', animate: isVisible ? 'visible' : 'hidden' }
 
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:joaovictor@example.com'
+  const validateForm = (): boolean => {
+    const schema = createContactFormSchema(t)
+    const result = schema.safeParse(formData)
+
+    if (!result.success) {
+      const newErrors: FormErrors = {}
+      result.error.issues.forEach((issue) => {
+        const field = issue.path[0] as keyof FormErrors
+        if (!newErrors[field]) {
+          newErrors[field] = issue.message
+        }
+      })
+      setErrors(newErrors)
+      return false
+    }
+
+    setErrors({})
+    return true
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (validateForm()) {
+      const mailtoLink = `mailto:joaovictor@example.com?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(
+        `From: ${formData.email}\n\n${formData.message}`
+      )}`
+
+      window.location.href = mailtoLink
+
+      setFormData({ email: '', subject: '', message: '' })
+      setErrors({})
+    }
+  }
+
+  const handleInputChange = (
+    field: keyof ContactFormData,
+    value: string
+  ) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: undefined }))
+    }
   }
 
   return (
@@ -71,19 +124,56 @@ export function Contact({ className }: ContactProps) {
             {t('description')}
           </motion.p>
 
-          {/* Email Button */}
-          <motion.div
+          {/* Contact Form */}
+          <motion.form
             {...animationProps}
-            variants={scaleIn}
+            variants={fadeInUp}
+            onSubmit={handleSubmit}
+            noValidate
+            className="max-w-2xl mx-auto space-y-6"
           >
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={handleEmailClick}
-            >
-              {t('emailLabel')}
-            </Button>
-          </motion.div>
+            {/* Email and Subject in same row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input
+                type="email"
+                label={t('form.emailLabel')}
+                placeholder={t('form.emailPlaceholder')}
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                error={errors.email}
+              />
+
+              <Input
+                type="text"
+                label={t('form.subjectLabel')}
+                placeholder={t('form.subjectPlaceholder')}
+                value={formData.subject}
+                onChange={(e) => handleInputChange('subject', e.target.value)}
+                error={errors.subject}
+              />
+            </div>
+
+            <Textarea
+              label={t('form.messageLabel')}
+              placeholder={t('form.messagePlaceholder')}
+              value={formData.message}
+              onChange={(e) => handleInputChange('message', e.target.value)}
+              error={errors.message}
+              maxLength={500}
+              showCounter
+              rows={6}
+            />
+
+            <div className="flex justify-center pt-4">
+              <Button
+                variant="primary"
+                size="lg"
+                type="submit"
+              >
+                {t('form.submitButton')}
+              </Button>
+            </div>
+          </motion.form>
 
           {/* Geometric decoration */}
           <div className="relative mt-16">

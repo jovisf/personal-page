@@ -84,7 +84,22 @@
   "contact": {
     "title": "Get in touch",
     "description": "If you'd like to talk about technology, software engineering, information security, or professional opportunities, feel free to reach out.",
-    "emailLabel": "Send an email"
+    "form": {
+      "emailLabel": "Your email",
+      "emailPlaceholder": "your.email@example.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "What would you like to talk about?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "submitButton": "Send message",
+      "errors": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "subjectRequired": "Subject is required",
+        "messageRequired": "Message is required",
+        "messageMaxLength": "Message must be at most 500 characters"
+      }
+    }
   },
   "footer": {
     "text": "This website was developed by me."

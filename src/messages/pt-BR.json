@@ -84,7 +84,22 @@
   "contact": {
     "title": "Entre em contato",
     "description": "Se quiser conversar sobre tecnologia, engenharia de software, segurança da informação ou oportunidades profissionais, fique à vontade para entrar em contato comigo.",
-    "emailLabel": "Enviar um e-mail"
+    "form": {
+      "emailLabel": "Seu e-mail",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "subjectLabel": "Assunto",
+      "subjectPlaceholder": "Sobre o que você quer falar?",
+      "messageLabel": "Mensagem",
+      "messagePlaceholder": "Escreva sua mensagem aqui...",
+      "submitButton": "Enviar mensagem",
+      "errors": {
+        "emailRequired": "E-mail é obrigatório",
+        "emailInvalid": "E-mail inválido",
+        "subjectRequired": "Assunto é obrigatório",
+        "messageRequired": "Mensagem é obrigatória",
+        "messageMaxLength": "A mensagem deve ter no máximo 500 caracteres"
+      }
+    }
   },
   "footer": {
     "text": "Este site foi desenvolvido por mim."
