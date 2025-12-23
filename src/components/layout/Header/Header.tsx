@@ -119,7 +119,10 @@ export function Header({ className }: HeaderProps) {
 
             {/* Theme Toggle */}
             <button
-              onClick={toggleTheme}
+              onClick={() => {
+                console.log('[Header] Theme toggle button clicked')
+                toggleTheme()
+              }}
               className="w-10 h-10 flex items-center justify-center border-2 border-light-text dark:border-dark-text hover:bg-light-primary-accent dark:hover:bg-dark-secondary-accent hover:border-light-primary-accent dark:hover:border-dark-secondary-accent transition-colors duration-0"
               aria-label="Toggle theme"
             >
@@ -173,7 +176,10 @@ export function Header({ className }: HeaderProps) {
               <div className="flex items-center gap-4 pt-4 border-t border-light-text dark:border-dark-text">
                 {/* Theme Toggle */}
                 <button
-                  onClick={toggleTheme}
+                  onClick={() => {
+                    console.log('[Header Mobile] Theme toggle button clicked')
+                    toggleTheme()
+                  }}
                   className="w-10 h-10 flex items-center justify-center border-2 border-light-text dark:border-dark-text hover:bg-light-primary-accent hover:dark:bg-dark-primary-accent hover:border-light-primary-accent hover:dark:border-dark-primary-accent transition-colors duration-0"
                   aria-label="Toggle theme"
                 >

@@ -1,12 +1,32 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
+  /* Light mode colors (default) */
+  --color-background: #E9F5DB;
+  --color-primary-accent: #718355;
+  --color-secondary-accent: #B5C99A;
+  --color-surface: #CFE1B9;
+  --color-text: #021024;
+
+  /* Keep light-prefixed versions for explicit usage */
   --color-light-background: #E9F5DB;
   --color-light-primary-accent: #718355;
   --color-light-secondary-accent: #B5C99A;
   --color-light-surface: #CFE1B9;
   --color-light-text: #021024;
 
+  /* Dark mode overrides */
+  @variant dark {
+    --color-background: #021024;
+    --color-primary-accent: #7DA0CA;
+    --color-secondary-accent: #5483B3;
+    --color-surface: #052659;
+    --color-text: #C1E8FF;
+  }
+
+  /* Keep dark-prefixed versions for explicit usage */
   --color-dark-background: #021024;
   --color-dark-primary-accent: #7DA0CA;
   --color-dark-secondary-accent: #5483B3;
