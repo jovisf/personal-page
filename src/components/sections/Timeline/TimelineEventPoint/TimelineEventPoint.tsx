@@ -31,7 +31,7 @@ export function TimelineEventPoint({
         )}
         aria-label={`${event.title} - ${event.year}`}
       >
-        <span className="font-tilda font-extrabold text-sm md:text-base text-light-text dark:text-dark-text">
+        <span className="font-extrabold text-sm md:text-base text-light-text dark:text-dark-text">
           {event.year}
         </span>
       </button>
@@ -55,7 +55,7 @@ export function TimelineEventPoint({
       )}
       aria-label={`${event.title} - ${event.year}`}
     >
-      <span className="font-tilda font-extrabold text-sm md:text-base text-light-text dark:text-dark-text">
+      <span className="font-extrabold text-sm md:text-base text-light-text dark:text-dark-text">
         {event.year}
       </span>
     </motion.button>

@@ -66,7 +66,7 @@ export function About({ className }: AboutProps) {
         <motion.h2
           {...animationProps}
           variants={fadeInUp}
-          className="text-4xl md:text-5xl lg:text-6xl font-tilda font-extrabold uppercase tracking-tight mb-12 text-light-text dark:text-dark-text"
+          className="text-4xl md:text-5xl lg:text-6xl  font-extrabold uppercase tracking-tight mb-12 text-light-text dark:text-dark-text"
         >
           {t('title')}
         </motion.h2>
@@ -83,7 +83,7 @@ export function About({ className }: AboutProps) {
               <motion.p
                 key={index}
                 variants={fadeInUp}
-                className="font-tilda font-medium text-base md:text-lg leading-relaxed text-light-text dark:text-dark-text"
+                className="font-medium text-base md:text-lg leading-relaxed text-light-text dark:text-dark-text"
               >
                 {paragraph}
               </motion.p>
@@ -107,7 +107,7 @@ export function About({ className }: AboutProps) {
           >
             <motion.h3
               variants={fadeInUp}
-              className="text-2xl md:text-3xl font-tilda font-bold uppercase tracking-tight mb-6 text-light-primary-accent dark:text-dark-primary-accent"
+              className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-6 text-light-primary-accent dark:text-dark-primary-accent"
             >
               {t('hobbiesTitle')}
             </motion.h3>
@@ -119,7 +119,7 @@ export function About({ className }: AboutProps) {
                 <motion.li
                   key={index}
                   variants={fadeInUp}
-                  className="font-tilda font-medium text-sm md:text-base leading-relaxed flex items-start text-light-text dark:text-dark-text"
+                  className="font-medium text-sm md:text-base leading-relaxed flex items-start text-light-text dark:text-dark-text"
                 >
                   <span className="inline-block w-2 h-2 bg-light-primary-accent dark:bg-dark-primary-accent mt-2 mr-3 flex-shrink-0" />
                   <span>{hobby}</span>

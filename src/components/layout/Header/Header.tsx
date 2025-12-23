@@ -65,7 +65,7 @@ export function Header({ className }: HeaderProps) {
           {/* Logo */}
           <button
             onClick={() => handleNavClick('hero')}
-            className="font-tilda font-extrabold text-xl md:text-2xl uppercase tracking-tight text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
+            className="font-extrabold text-xl md:text-2xl uppercase tracking-tight text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
           >
             JV
           </button>
@@ -78,7 +78,7 @@ export function Header({ className }: HeaderProps) {
                 ref={(el) => { navRefs.current[index] = el }}
                 onClick={() => handleNavClick(item.anchor)}
                 className={cn(
-                  "font-tilda font-medium text-sm uppercase tracking-wide transition-colors relative",
+                  "font-medium text-sm uppercase tracking-wide transition-colors relative",
                   activeSection === item.anchor
                     ? "text-light-primary-accent dark:text-dark-primary-accent"
                     : "text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent"
@@ -112,7 +112,7 @@ export function Header({ className }: HeaderProps) {
               aria-label="Toggle theme"
             >
               {mounted && (
-                <span className="font-tilda font-bold text-lg text-light-text dark:text-dark-text">
+                <span className="font-bold text-lg text-light-text dark:text-dark-text">
                   {theme === 'light' ? '☾' : '☀'}
                 </span>
               )}
@@ -123,7 +123,7 @@ export function Header({ className }: HeaderProps) {
               <button
                 onClick={() => handleLocaleChange('pt-BR')}
                 className={cn(
-                  'font-tilda font-bold text-sm uppercase px-2 py-1 transition-colors',
+                  'font-bold text-sm uppercase px-2 py-1 transition-colors',
                   locale === 'pt-BR'
                     ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
                     : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
@@ -135,7 +135,7 @@ export function Header({ className }: HeaderProps) {
               <button
                 onClick={() => handleLocaleChange('en')}
                 className={cn(
-                  'font-tilda font-bold text-sm uppercase px-2 py-1 transition-colors',
+                  'font-bold text-sm uppercase px-2 py-1 transition-colors',
                   locale === 'en'
                     ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
                     : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
@@ -149,7 +149,7 @@ export function Header({ className }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden font-tilda font-bold text-sm uppercase"
+            className="md:hidden font-bold text-sm uppercase"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? 'CLOSE' : 'MENU'}
@@ -169,7 +169,7 @@ export function Header({ className }: HeaderProps) {
                 <button
                   key={index}
                   onClick={() => handleNavClick(item.anchor)}
-                  className="font-tilda font-medium text-sm uppercase tracking-wide text-left text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
+                  className="font-medium text-sm uppercase tracking-wide text-left text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
                 >
                   {item.label}
                 </button>
@@ -184,7 +184,7 @@ export function Header({ className }: HeaderProps) {
                   aria-label="Toggle theme"
                 >
                   {mounted && (
-                    <span className="font-tilda font-bold text-lg">
+                    <span className="font-bold text-lg">
                       {theme === 'light' ? '☾' : '☀'}
                     </span>
                   )}
@@ -195,7 +195,7 @@ export function Header({ className }: HeaderProps) {
                   <button
                     onClick={() => handleLocaleChange('pt-BR')}
                     className={cn(
-                      'font-tilda font-bold text-sm uppercase px-2 py-1 transition-colors',
+                      'font-bold text-sm uppercase px-2 py-1 transition-colors',
                       locale === 'pt-BR'
                         ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
                         : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
@@ -207,7 +207,7 @@ export function Header({ className }: HeaderProps) {
                   <button
                     onClick={() => handleLocaleChange('en')}
                     className={cn(
-                      'font-tilda font-bold text-sm uppercase px-2 py-1 transition-colors',
+                      'font-bold text-sm uppercase px-2 py-1 transition-colors',
                       locale === 'en'
                         ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
                         : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'

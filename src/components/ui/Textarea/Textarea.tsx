@@ -17,7 +17,7 @@ export function Textarea({
   return (
     <div className="w-full">
       {label && (
-        <label className="block mb-2 font-tilda font-bold text-sm uppercase tracking-wide text-light-text dark:text-dark-text">
+        <label className="block mb-2 font-bold text-sm uppercase tracking-wide text-light-text dark:text-dark-text">
           {label}
         </label>
       )}
@@ -26,7 +26,7 @@ export function Textarea({
         value={value}
         maxLength={maxLength}
         className={cn(
-          'w-full px-4 py-3 font-tilda font-medium text-base',
+          'w-full px-4 py-3 font-medium text-base',
           'bg-light-surface dark:bg-dark-surface',
           'text-light-text dark:text-dark-text',
           'border-3 border-light-primary-accent dark:border-dark-primary-accent',
@@ -40,13 +40,13 @@ export function Textarea({
       />
       <div className="flex items-center justify-between mt-1">
         {error && (
-          <p className="text-sm font-tilda font-medium text-red-500 dark:text-red-400">
+          <p className="text-sm font-medium text-red-500 dark:text-red-400">
             {error}
           </p>
         )}
         {showCounter && maxLength && (
           <p className={cn(
-            'text-sm font-tilda font-medium ml-auto',
+            'text-sm font-medium ml-auto',
             currentLength > maxLength * 0.9
               ? 'text-red-500 dark:text-red-400'
               : 'text-light-text/70 dark:text-dark-text/70'

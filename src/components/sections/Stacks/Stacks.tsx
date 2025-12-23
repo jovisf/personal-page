@@ -122,7 +122,7 @@ export function Stacks({ className }: StacksProps) {
         <motion.h2
           {...animationProps}
           variants={fadeInUp}
-          className="text-4xl md:text-5xl lg:text-6xl font-tilda font-extrabold uppercase tracking-tight mb-16 text-light-text dark:text-dark-text"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mb-16 text-light-text dark:text-dark-text"
         >
           {t('title')}
         </motion.h2>
@@ -131,7 +131,7 @@ export function Stacks({ className }: StacksProps) {
         <motion.h3
           {...animationProps}
           variants={fadeInUp}
-          className="text-2xl md:text-3xl font-tilda font-bold uppercase tracking-tight mb-8 text-light-primary-accent dark:text-dark-primary-accent"
+          className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-8 text-light-primary-accent dark:text-dark-primary-accent"
         >
           {t('technologiesTitle')}
         </motion.h3>
@@ -188,7 +188,7 @@ export function Stacks({ className }: StacksProps) {
                       </div>
                     )}
                     <span className={cn(
-                      'font-tilda font-bold text-xs md:text-sm text-center',
+                      'font-bold text-xs md:text-sm text-center',
                       'text-light-text dark:text-dark-text',
                       'group-hover:text-light-background group-hover:dark:text-dark-background',
                       'transition-colors duration-0'
@@ -251,7 +251,7 @@ export function Stacks({ className }: StacksProps) {
                       </div>
                     )}
                     <span className={cn(
-                      'font-tilda font-bold text-xs md:text-sm text-center',
+                      'font-bold text-xs md:text-sm text-center',
                       'text-light-text dark:text-dark-text',
                       'group-hover:text-light-background group-hover:dark:text-dark-background',
                       'transition-colors duration-0'
@@ -279,7 +279,7 @@ export function Stacks({ className }: StacksProps) {
           <motion.h3
             {...animationProps}
             variants={fadeInUp}
-            className="text-2xl md:text-3xl font-tilda font-bold uppercase tracking-tight mb-8 text-light-primary-accent dark:text-dark-primary-accent"
+            className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-8 text-light-primary-accent dark:text-dark-primary-accent"
           >
             {t('certificatesTitle')}
           </motion.h3>
@@ -327,7 +327,7 @@ export function Stacks({ className }: StacksProps) {
                     </div>
                   )}
 
-                  <p className="font-tilda font-medium text-base md:text-lg leading-relaxed relative z-10 text-light-text dark:text-dark-text">
+                  <p className="font-medium text-base md:text-lg leading-relaxed relative z-10 text-light-text dark:text-dark-text">
                     {cert}
                   </p>
                 </motion.div>

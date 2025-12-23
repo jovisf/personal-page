@@ -124,18 +124,18 @@ export function TimelineEventCard({
 
         {/* Year Badge */}
         <div className="inline-block px-3 py-1 mb-3 bg-light-primary-accent dark:bg-dark-primary-accent">
-          <span className="font-tilda font-extrabold text-lg text-light-background dark:text-dark-background">
+          <span className="font-extrabold text-lg text-light-background dark:text-dark-background">
             {event.year}
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="font-tilda font-bold text-xl mb-3 text-light-text dark:text-dark-text leading-tight">
+        <h3 className="font-bold text-xl mb-3 text-light-text dark:text-dark-text leading-tight">
           {event.title}
         </h3>
 
         {/* Description */}
-        <p className="font-tilda font-medium text-sm leading-relaxed text-light-text dark:text-dark-text opacity-90">
+        <p className="font-medium text-sm leading-relaxed text-light-text dark:text-dark-text opacity-90">
           {event.description}
         </p>
       </motion.div>

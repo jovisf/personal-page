@@ -130,7 +130,7 @@ export function Contact({ className }: ContactProps) {
           <motion.h2
             {...animationProps}
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-tilda font-extrabold uppercase tracking-tight mb-8 text-light-text dark:text-dark-text"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mb-8 text-light-text dark:text-dark-text"
           >
             {t('title')}
           </motion.h2>
@@ -139,7 +139,7 @@ export function Contact({ className }: ContactProps) {
           <motion.p
             {...animationProps}
             variants={fadeInUp}
-            className="font-tilda font-medium text-lg md:text-xl leading-relaxed mb-12 text-light-text dark:text-dark-text"
+            className="font-medium text-lg md:text-xl leading-relaxed mb-12 text-light-text dark:text-dark-text"
           >
             {t('description')}
           </motion.p>

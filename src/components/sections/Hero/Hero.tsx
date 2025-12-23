@@ -97,7 +97,7 @@ export function Hero({ className }: HeroProps) {
             <motion.h1
               {...animationProps}
               variants={diagonalSlideIn}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-tilda font-extrabold uppercase tracking-tight leading-none"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold uppercase tracking-tight leading-none"
             >
               {t('title')}
             </motion.h1>
@@ -114,7 +114,7 @@ export function Hero({ className }: HeroProps) {
           <motion.p
             {...animationProps}
             variants={fadeIn}
-            className="text-xl sm:text-2xl md:text-3xl font-tilda font-bold uppercase mb-8 text-light-primary-accent dark:text-dark-primary-accent"
+            className="text-xl sm:text-2xl md:text-3xl font-bold uppercase mb-8 text-light-primary-accent dark:text-dark-primary-accent"
           >
             {t('subtitle')}
           </motion.p>
@@ -123,7 +123,7 @@ export function Hero({ className }: HeroProps) {
           <motion.p
             {...animationProps}
             variants={fadeIn}
-            className="text-base sm:text-lg md:text-xl font-tilda font-medium leading-relaxed max-w-3xl text-light-text dark:text-dark-text"
+            className="text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-3xl text-light-text dark:text-dark-text"
           >
             {t('description')}
           </motion.p>

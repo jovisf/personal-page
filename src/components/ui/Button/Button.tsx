@@ -30,7 +30,7 @@ export function Button({
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        'font-tilda font-bold uppercase tracking-wide transition-all',
+        'font-bold uppercase tracking-wide transition-all',
         'hover:border-4 hover:shadow-[4px_4px_0px_0px]',
         'hover:shadow-light-text dark:hover:shadow-dark-text',
         variants[variant],

@@ -44,7 +44,7 @@ export function Toast({ message, type, isVisible, onClose }: ToastProps) {
           role="alert"
           aria-live="polite"
         >
-          <span className={cn('font-tilda font-medium', textStyles[type])}>
+          <span className={cn('font-medium', textStyles[type])}>
             {message}
           </span>
           <button

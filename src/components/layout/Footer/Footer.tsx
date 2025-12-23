@@ -40,7 +40,7 @@ export function Footer({ className }: FooterProps) {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <p className="font-tilda font-medium text-sm md:text-base text-center md:text-left">
+          <p className="font-medium text-sm md:text-base text-center md:text-left">
             {t('text')} © {currentYear}
           </p>
 
