@@ -1,13 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { useScrollObserver } from '@/hooks/useScrollObserver'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/Textarea'
+import { Toast } from '@/components/ui/Toast'
+import type { ToastType } from '@/components/ui/Toast'
 import { cn } from '@/lib/utils'
+import { contactService } from '@/services/contact.service'
 import type { ContactProps } from './Contact.types'
 import { createContactFormSchema } from './Contact.schema'
 import type { ContactFormData } from './Contact.schema'
@@ -27,6 +30,8 @@ interface FormErrors {
   message?: string
 }
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error'
+
 export function Contact({ className }: ContactProps) {
   const t = useTranslations('contact')
   const [ref, isVisible] = useScrollObserver<HTMLElement>({ threshold: 0.3 })
@@ -38,6 +43,10 @@ export function Contact({ className }: ContactProps) {
   })
 
   const [errors, setErrors] = useState<FormErrors>({})
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [toast, setToast] = useState<{ message: string; type: ToastType } | null>(null)
+
+  const closeToast = useCallback(() => setToast(null), [])
 
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
@@ -67,20 +76,31 @@ export function Contact({ className }: ContactProps) {
     return true
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (validateForm()) {
-      const mailtoLink = `mailto:joaovictor@example.com?subject=${encodeURIComponent(
-        formData.subject
-      )}&body=${encodeURIComponent(
-        `From: ${formData.email}\n\n${formData.message}`
-      )}`
+    if (!validateForm()) return
 
-      window.location.href = mailtoLink
+    if (status === 'loading') return
 
+    setStatus('loading')
+
+    try {
+      await contactService.sendEmail(formData)
+      setStatus('success')
       setFormData({ email: '', subject: '', message: '' })
       setErrors({})
+      setToast({ message: t('form.successMessage'), type: 'success' })
+    } catch (error) {
+      setStatus('error')
+
+      const errorMessage = error instanceof Error && error.message.includes('Too many requests')
+        ? error.message
+        : t('form.errorMessage')
+
+      setToast({ message: errorMessage, type: 'error' })
+    } finally {
+      setTimeout(() => setStatus('idle'), 500)
     }
   }
 
@@ -169,11 +189,20 @@ export function Contact({ className }: ContactProps) {
                 variant="primary"
                 size="lg"
                 type="submit"
+                disabled={status === 'loading'}
               >
-                {t('form.submitButton')}
+                {status === 'loading' ? t('form.sendingButton') : t('form.submitButton')}
               </Button>
             </div>
           </motion.form>
+
+          {/* Toast notification */}
+          <Toast
+            message={toast?.message || ''}
+            type={toast?.type || 'success'}
+            isVisible={!!toast}
+            onClose={closeToast}
+          />
 
           {/* Geometric decoration */}
           <div className="relative mt-16">

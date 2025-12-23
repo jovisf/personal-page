@@ -92,6 +92,9 @@
       "messageLabel": "Mensagem",
       "messagePlaceholder": "Escreva sua mensagem aqui...",
       "submitButton": "Enviar mensagem",
+      "sendingButton": "Enviando...",
+      "successMessage": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+      "errorMessage": "Erro ao enviar mensagem. Por favor, tente novamente.",
       "errors": {
         "emailRequired": "E-mail é obrigatório",
         "emailInvalid": "E-mail inválido",
