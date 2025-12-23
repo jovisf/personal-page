@@ -1,0 +1,117 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "timeline": "Parcours",
+    "stacks": "Stacks",
+    "contact": "Contact"
+  },
+  "header": {
+    "welcome": "bonjour, bienvenue"
+  },
+  "languages": {
+    "portuguese": "Português",
+    "english": "English"
+  },
+  "hero": {
+    "title": "Construire des logiciels avec un objectif",
+    "subtitle": "Génie Logiciel • Développement Sécurisé • Web",
+    "description": "Je suis João Victor, développeur de logiciels et étudiant en informatique à l'UFPE. Je travaille sur la construction d'applications web robustes, en combinant génie logiciel, bonnes pratiques et un fort accent sur la sécurité de l'information et la protection des données."
+  },
+  "about": {
+    "title": "À propos de moi",
+    "paragraphs": [
+      "Je suis étudiant en informatique à l'Université Fédérale de Pernambuco (UFPE) et développeur de logiciels avec une expérience pratique dans les applications web, les APIs et les systèmes utilisés par de vrais utilisateurs.",
+      "Ma base est le génie logiciel : architecture, qualité du code, maintenabilité, évolutivité et bonnes pratiques font partie de mon travail quotidien en tant que développeur.",
+      "En parallèle, j'approfondis de plus en plus la sécurité de l'information et le développement sécurisé, avec une attention particulière à la protection des données, au contrôle d'accès, au principe du moindre privilège, à l'authentification, à l'autorisation et à la conformité.",
+      "Je crois qu'un logiciel bien construit doit être fonctionnel, durable et sécurisé. C'est pourquoi je cherche toujours à aligner une ingénierie solide avec un état d'esprit axé sur la sécurité dès le début du développement."
+    ],
+    "hobbiesTitle": "Au-delà du code",
+    "hobbies": [
+      "Je suis passionné de football et je suis tous les matchs du Sport Club do Recife et du FC Barcelone.",
+      "J'aime beaucoup lire, surtout de la fantasy. J'ai lu des œuvres comme Dune, Le Trône de Fer, Le Seigneur des Anneaux, Harry Potter, entre autres.",
+      "Je suis également fan de super-héros et de cinéma — sans rivalité entre Marvel et DC, je profite du meilleur des deux univers.",
+      "Ces intérêts font partie de qui je suis et m'aident à maintenir créativité, curiosité et équilibre en dehors du code."
+    ]
+  },
+  "timeline": {
+    "title": "Mon parcours",
+    "instructionDesktop": "Passez la souris sur les points pour voir les détails",
+    "instructionMobile": "Touchez les points pour voir les détails",
+    "events": {
+      "ufpe-admission": {
+        "title": "Admission à l'Université Fédérale de Pernambuco",
+        "description": "Début du programme d'informatique au Centre d'Informatique de l'UFPE (CIn-UFPE), marquant le début de ma formation académique et contact approfondi avec l'informatique et le génie logiciel."
+      },
+      "logic-monitor": {
+        "title": "Assistant d'enseignement en Logique pour l'Informatique",
+        "description": "Travail comme assistant d'enseignement pour le cours de Logique pour l'Informatique, aidant les étudiants, renforçant les fondamentaux et développant des compétences en communication, leadership et pédagogie."
+      },
+      "pet-member": {
+        "title": "Membre du PET Informatique",
+        "description": "Entrée dans le Programme d'Éducation Tutorial (PET Informatique), participant à des projets académiques, événements, systèmes web et initiatives éducatives."
+      },
+      "reciprev-project": {
+        "title": "Projet RECIPREV",
+        "description": "Travail sur le développement et la maintenance de systèmes pour RECIPREV, en traitant avec des applications réelles, contrôle d'accès, intégration de systèmes et accent sur la sécurité et la fiabilité."
+      },
+      "cozextech-developer": {
+        "title": "Développeur Full Stack chez CozexTech",
+        "description": "Entrée comme développeur full stack chez CozexTech, travaillant sur des applications web, APIs, architecture, optimisations, développement sécurisé et bonnes pratiques de génie logiciel."
+      }
+    }
+  },
+  "stacks": {
+    "title": "Stacks et connaissances",
+    "technologiesTitle": "Technologies",
+    "certificatesTitle": "Certificats",
+    "technologies": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "Git",
+      "Javascript",
+      "Angular",
+      "Ruby on Rails",
+      "Linux",
+      "CI/CD",
+      "Burp Suite",
+      "Wireshark"
+    ],
+    "certificates": [
+      "Cybersecurity & Endpoint Security (Cisco)",
+      "Digital Forensics & Cyber Investigation (Tempest)",
+      "Cloud Computing Foundations (Google Cloud)"
+    ]
+  },
+  "contact": {
+    "title": "Entrer en contact",
+    "description": "Si vous souhaitez discuter de technologie, de génie logiciel, de sécurité de l'information ou d'opportunités professionnelles, n'hésitez pas à me contacter.",
+    "form": {
+      "emailLabel": "Votre email",
+      "emailPlaceholder": "votre.email@exemple.com",
+      "subjectLabel": "Sujet",
+      "subjectPlaceholder": "De quoi aimeriez-vous parler ?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Écrivez votre message ici...",
+      "submitButton": "Envoyer le message",
+      "sendingButton": "Envoi en cours...",
+      "successMessage": "Message envoyé avec succès ! Je vous répondrai bientôt.",
+      "errorMessage": "Erreur lors de l'envoi du message. Veuillez réessayer.",
+      "errors": {
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Email invalide",
+        "subjectRequired": "Le sujet est requis",
+        "messageRequired": "Le message est requis",
+        "messageMaxLength": "Le message doit comporter au maximum 500 caractères"
+      }
+    }
+  },
+  "footer": {
+    "text": "Ce site web a été développé par moi."
+  }
+}

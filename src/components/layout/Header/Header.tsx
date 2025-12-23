@@ -33,6 +33,8 @@ export function Header({ className }: HeaderProps) {
   const languageOptions = [
     { value: 'pt-BR', label: 'Português', flag: '🇧🇷' },
     { value: 'en', label: 'English', flag: '🇺🇸' },
+    { value: 'fr', label: 'Français', flag: '🇫🇷' },
+    { value: 'es', label: 'Español', flag: '🇪🇸' },
   ]
 
   const sectionIds = useMemo(() => ['hero', 'about', 'timeline', 'stacks', 'contact'], [])

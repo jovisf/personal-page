@@ -1,0 +1,117 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "timeline": "Trayectoria",
+    "stacks": "Stacks",
+    "contact": "Contacto"
+  },
+  "header": {
+    "welcome": "hola, bienvenido"
+  },
+  "languages": {
+    "portuguese": "Português",
+    "english": "English"
+  },
+  "hero": {
+    "title": "Construyendo software con propósito",
+    "subtitle": "Ingeniería de Software • Desarrollo Seguro • Web",
+    "description": "Soy João Victor, desarrollador de software y estudiante de Ciencias de la Computación en UFPE. Trabajo en la construcción de aplicaciones web robustas, uniendo ingeniería de software, buenas prácticas y un fuerte enfoque en seguridad de la información y protección de datos."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraphs": [
+      "Soy estudiante de Ciencias de la Computación en la Universidad Federal de Pernambuco (UFPE) y desarrollador de software con experiencia práctica en aplicaciones web, APIs y sistemas utilizados por usuarios reales.",
+      "Mi base es la Ingeniería de Software: arquitectura, calidad de código, mantenibilidad, escalabilidad y buenas prácticas forman parte de mi trabajo diario como desarrollador.",
+      "Paralelamente, me he estado profundizando cada vez más en Seguridad de la Información y desarrollo seguro, con especial atención a la protección de datos, control de acceso, principio de menor privilegio, autenticación, autorización y cumplimiento normativo.",
+      "Creo que el software bien construido necesita ser funcional, sostenible y seguro. Por eso, siempre busco alinear una ingeniería sólida con una mentalidad de seguridad desde el inicio del desarrollo."
+    ],
+    "hobbiesTitle": "Más allá del código",
+    "hobbies": [
+      "Soy apasionado del fútbol y sigo todos los partidos del Sport Club do Recife y del Barcelona.",
+      "Me encanta leer, especialmente fantasía. He leído obras como Duna, Canción de Hielo y Fuego, El Señor de los Anillos, Harry Potter, entre otras.",
+      "También soy fanático de los superhéroes y el cine — sin rivalidad entre Marvel y DC, disfruto lo mejor de ambos universos.",
+      "Estos intereses son parte de quien soy y me ayudan a mantener creatividad, curiosidad y equilibrio fuera del código."
+    ]
+  },
+  "timeline": {
+    "title": "Mi trayectoria",
+    "instructionDesktop": "Pasa el cursor sobre los puntos para ver los detalles",
+    "instructionMobile": "Toca los puntos para ver los detalles",
+    "events": {
+      "ufpe-admission": {
+        "title": "Ingreso a la Universidad Federal de Pernambuco",
+        "description": "Inicio del programa de Ciencias de la Computación en el Centro de Informática de la UFPE (CIn-UFPE), marcando el comienzo de mi formación académica y contacto profundo con la computación e ingeniería de software."
+      },
+      "logic-monitor": {
+        "title": "Monitor de Lógica para Computación",
+        "description": "Actuación como monitor de la disciplina de Lógica para Computación, ayudando a estudiantes, reforzando fundamentos y desarrollando habilidades de comunicación, liderazgo y didáctica."
+      },
+      "pet-member": {
+        "title": "Miembro del PET Informática",
+        "description": "Ingreso al Programa de Educación Tutorial (PET Informática), participando en proyectos académicos, eventos, sistemas web e iniciativas educativas."
+      },
+      "reciprev-project": {
+        "title": "Proyecto RECIPREV",
+        "description": "Actuación en el desarrollo y mantenimiento de sistemas para RECIPREV, trabajando con aplicaciones reales, control de acceso, integración de sistemas y enfoque en seguridad y confiabilidad."
+      },
+      "cozextech-developer": {
+        "title": "Desarrollador Full Stack en CozexTech",
+        "description": "Ingreso como desarrollador full stack en CozexTech, actuando en aplicaciones web, APIs, arquitectura, optimizaciones, desarrollo seguro y buenas prácticas de ingeniería de software."
+      }
+    }
+  },
+  "stacks": {
+    "title": "Stacks y conocimientos",
+    "technologiesTitle": "Tecnologías",
+    "certificatesTitle": "Certificados",
+    "technologies": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "Git",
+      "Javascript",
+      "Angular",
+      "Ruby on Rails",
+      "Linux",
+      "CI/CD",
+      "Burp Suite",
+      "Wireshark"
+    ],
+    "certificates": [
+      "Cybersecurity & Endpoint Security (Cisco)",
+      "Digital Forensics & Cyber Investigation (Tempest)",
+      "Cloud Computing Foundations (Google Cloud)"
+    ]
+  },
+  "contact": {
+    "title": "Ponte en contacto",
+    "description": "Si quieres conversar sobre tecnología, ingeniería de software, seguridad de la información u oportunidades profesionales, no dudes en contactarme.",
+    "form": {
+      "emailLabel": "Tu email",
+      "emailPlaceholder": "tu.email@ejemplo.com",
+      "subjectLabel": "Asunto",
+      "subjectPlaceholder": "¿Sobre qué quieres hablar?",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje aquí...",
+      "submitButton": "Enviar mensaje",
+      "sendingButton": "Enviando...",
+      "successMessage": "¡Mensaje enviado con éxito! Me pondré en contacto pronto.",
+      "errorMessage": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+      "errors": {
+        "emailRequired": "El email es obligatorio",
+        "emailInvalid": "Email inválido",
+        "subjectRequired": "El asunto es obligatorio",
+        "messageRequired": "El mensaje es obligatorio",
+        "messageMaxLength": "El mensaje debe tener como máximo 500 caracteres"
+      }
+    }
+  },
+  "footer": {
+    "text": "Este sitio web fue desarrollado por mí."
+  }
+}
