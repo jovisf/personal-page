@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useRouter, useParams, usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { preferences } from '@/lib/preferences'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useMarkerPosition } from '@/hooks/useMarkerPosition'
 import { LanguageSelect } from '@/components/ui/LanguageSelect'
@@ -51,6 +52,10 @@ export function Header({ className }: HeaderProps) {
 
   const handleLocaleChange = (newLocale: string) => {
     if (newLocale === locale) return
+
+    if (newLocale === 'pt-BR' || newLocale === 'en' || newLocale === 'fr' || newLocale === 'es') {
+      preferences.setLocale(newLocale)
+    }
 
     startTransition(() => {
       const currentPath = pathname.replace(`/${locale}`, '')

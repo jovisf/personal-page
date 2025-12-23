@@ -1,17 +1,26 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-
-type Theme = 'light' | 'dark'
+import { preferences } from '@/lib/preferences'
+import type { Theme } from '@/lib/preferences'
 
 function getInitialTheme(): Theme {
   if (typeof window === 'undefined') return 'light'
 
-  const storedTheme = localStorage.getItem('theme') as Theme | null
-  if (storedTheme) return storedTheme
+  const cookieTheme = preferences.getTheme()
+  if (cookieTheme) return cookieTheme
+
+  const localStorageTheme = localStorage.getItem('theme') as Theme | null
+  if (localStorageTheme && (localStorageTheme === 'light' || localStorageTheme === 'dark')) {
+    preferences.setTheme(localStorageTheme)
+    localStorage.removeItem('theme') 
+    return localStorageTheme
+  }
 
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  return prefersDark ? 'dark' : 'light'
+  const systemTheme = prefersDark ? 'dark' : 'light'
+  preferences.setTheme(systemTheme)
+  return systemTheme
 }
 
 export function useTheme() {
@@ -41,8 +50,10 @@ export function useTheme() {
       document.documentElement.classList.remove('dark')
     }
 
-    localStorage.setItem('theme', newTheme)
+    // Save to cookie
+    preferences.setTheme(newTheme)
 
+    // Dispatch event for theme change animations
     window.dispatchEvent(new CustomEvent('themeChange', { detail: { theme: newTheme } }))
   }
 

@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { useScrollObserver } from '@/hooks/useScrollObserver'
+import { preferences } from '@/lib/preferences'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/Textarea'
@@ -48,6 +49,13 @@ export function Contact({ className }: ContactProps) {
 
   const closeToast = useCallback(() => setToast(null), [])
 
+  useEffect(() => {
+    const savedEmail = preferences.getEmail()
+    if (savedEmail) {
+      setFormData((prev) => ({ ...prev, email: savedEmail }))
+    }
+  }, [])
+
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -88,7 +96,10 @@ export function Contact({ className }: ContactProps) {
     try {
       await contactService.sendEmail(formData)
       setStatus('success')
-      setFormData({ email: '', subject: '', message: '' })
+
+      preferences.setEmail(formData.email)
+
+      setFormData({ email: formData.email, subject: '', message: '' })
       setErrors({})
       setToast({ message: t('form.successMessage'), type: 'success' })
     } catch (error) {
