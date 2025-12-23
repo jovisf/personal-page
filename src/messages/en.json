@@ -6,6 +6,9 @@
     "stacks": "Stacks",
     "contact": "Contact"
   },
+  "header": {
+    "welcome": "hello, welcome"
+  },
   "hero": {
     "title": "Building software with purpose",
     "subtitle": "Software Engineering • Secure Development • Web",

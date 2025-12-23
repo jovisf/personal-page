@@ -6,6 +6,9 @@
     "stacks": "Stacks",
     "contact": "Contato"
   },
+  "header": {
+    "welcome": "olá, bem-vindo"
+  },
   "hero": {
     "title": "Construindo software com propósito",
     "subtitle": "Engenharia de Software • Desenvolvimento Seguro • Web",

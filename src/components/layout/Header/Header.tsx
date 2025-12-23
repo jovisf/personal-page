@@ -12,6 +12,7 @@ import type { HeaderProps } from './Header.types'
 
 export function Header({ className }: HeaderProps) {
   const t = useTranslations('navigation')
+  const tHeader = useTranslations('header')
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
@@ -67,7 +68,7 @@ export function Header({ className }: HeaderProps) {
             onClick={() => handleNavClick('hero')}
             className="font-extrabold text-xl md:text-2xl uppercase tracking-tight text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
           >
-            JV
+            {tHeader('welcome')}
           </button>
 
           {/* Desktop Navigation */}
