@@ -97,7 +97,7 @@ export function Hero({ className }: HeroProps) {
             <motion.h1
               {...animationProps}
               variants={diagonalSlideIn}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold uppercase tracking-tight leading-none"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold uppercase tracking-tight leading-none text-light-text dark:text-dark-text"
             >
               {t('title')}
             </motion.h1>
