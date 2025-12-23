@@ -75,25 +75,6 @@ src/
 4. **Component structure** - Follow the three-file pattern (Component.tsx, Component.types.ts, index.ts)
 5. **Follow TechnicalPrompt.md** - This is the source of truth for all development decisions
 
-## Next Steps
-
-- [ ] Add TildaSans font files to `src/app/fonts/TildaSans/`
-- [ ] Implement Hero section component
-- [ ] Implement About section component
-- [ ] Implement Timeline section component
-- [ ] Implement Stacks section component
-- [ ] Implement Contact section component
-- [ ] Add Header/Navigation component
-- [ ] Add Footer component
-- [ ] Implement dark mode toggle
-- [ ] Add scroll animations with Framer Motion
-- [ ] Optimize for performance and accessibility
-
-## Documentation
-
-- See `CLAUDE.md` for development instructions
-- See `TechnicalPrompt.md` for technical specifications and patterns
-
 ## License
 
 Private project - All rights reserved
