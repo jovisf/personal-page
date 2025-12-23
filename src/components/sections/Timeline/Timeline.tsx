@@ -67,10 +67,19 @@ export function Timeline({ className }: TimelineProps) {
         <motion.h2
           {...animationProps}
           variants={fadeInUp}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mb-16 md:mb-24 text-light-text dark:text-dark-text"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mb-4 text-light-text dark:text-dark-text"
         >
           {t('title')}
         </motion.h2>
+
+        {/* Instruction Text */}
+        <motion.p
+          {...animationProps}
+          variants={fadeInUp}
+          className="mb-16 md:mb-24 text-start font-medium text-sm text-light-text dark:text-dark-text opacity-60"
+        >
+          {isDesktop ? t('instructionDesktop') : t('instructionMobile')}
+        </motion.p>
 
         {/* Timeline Container */}
         <div className="relative">
@@ -119,14 +128,7 @@ export function Timeline({ className }: TimelineProps) {
             ))}
           </motion.div>
 
-          {/* Instruction Text */}
-          <motion.p
-            {...animationProps}
-            variants={fadeInUp}
-            className="mt-16 md:mt-20 text-center font-medium text-sm text-light-text dark:text-dark-text opacity-60"
-          >
-            {isDesktop ? t('instructionDesktop') : t('instructionMobile')}
-          </motion.p>
+          
         </div>
       </div>
 
