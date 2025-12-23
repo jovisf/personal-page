@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
+import { GeometricShape } from '@/components/ui/GeometricShape'
 import type { FooterProps } from './Footer.types'
 import { SiInstagram, SiLinkedin, SiGithub } from 'react-icons/si'
 
@@ -70,9 +71,18 @@ export function Footer({ className }: FooterProps) {
                 )
               })}
             </div>
-            <div className="w-3 h-3 bg-light-secondary-accent dark:bg-dark-secondary-accent" />
-            <div className="w-3 h-3 bg-light-primary-accent dark:bg-dark-primary-accent rotate-45" />
-            <div className="w-3 h-3 bg-light-surface dark:bg-dark-surface rounded-full" />
+            <GeometricShape
+              initialRotation={0}
+              className="w-3 h-3 bg-light-secondary-accent dark:bg-dark-secondary-accent"
+            />
+            <GeometricShape
+              initialRotation={45}
+              className="w-3 h-3 bg-light-primary-accent dark:bg-dark-primary-accent"
+            />
+            <GeometricShape
+              initialRotation={0}
+              className="w-3 h-3 bg-light-surface dark:bg-dark-surface rounded-full"
+            />
           </div>
         </div>
       </div>

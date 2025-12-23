@@ -19,11 +19,9 @@ export function useTheme() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Get initial theme
     const initialTheme = getInitialTheme()
     setTheme(initialTheme)
 
-    // Apply theme to document
     if (initialTheme === 'dark') {
       document.documentElement.classList.add('dark')
     } else {
@@ -37,7 +35,6 @@ export function useTheme() {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
 
-    // Apply theme to document
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark')
     } else {
@@ -45,6 +42,8 @@ export function useTheme() {
     }
 
     localStorage.setItem('theme', newTheme)
+
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: { theme: newTheme } }))
   }
 
   return { theme, toggleTheme, mounted }

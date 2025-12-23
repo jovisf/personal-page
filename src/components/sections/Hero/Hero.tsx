@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { GeometricShape } from '@/components/ui/GeometricShape'
 import type { HeroProps } from './Hero.types'
 
 const diagonalSlideIn = {
@@ -59,34 +60,38 @@ export function Hero({ className }: HeroProps) {
     >
       {/* Geometric Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
+        <GeometricShape
           {...animationProps}
           variants={geometricShapes}
           custom={0}
+          initialRotation={0}
           className="absolute top-20 right-20 w-32 h-32 bg-light-secondary-accent dark:bg-dark-secondary-accent"
           style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
         />
-        <motion.div
+        <GeometricShape
           {...animationProps}
           variants={geometricShapes}
           custom={1}
+          initialRotation={0}
           className="absolute bottom-32 left-16 w-24 h-24 rounded-full border-4 border-light-primary-accent dark:border-dark-primary-accent"
         />
-        <motion.div
+        <GeometricShape
           {...animationProps}
           variants={geometricShapes}
           custom={2}
+          initialRotation={0}
           className="absolute top-1/2 right-1/4 w-20 h-20 bg-light-surface dark:bg-dark-surface"
         />
-        <motion.div
+        <GeometricShape
           {...animationProps}
           variants={geometricShapes}
           custom={3}
+          initialRotation={0}
           className="absolute bottom-20 right-40 w-16 h-16"
           style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
         >
           <div className="w-full h-full bg-light-primary-accent dark:bg-dark-primary-accent" />
-        </motion.div>
+        </GeometricShape>
       </div>
 
       {/* Main Content */}

@@ -5,10 +5,10 @@ import { useTranslations } from 'next-intl'
 import { useRouter, useParams, usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { useTheme } from '@/hooks/useTheme'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useMarkerPosition } from '@/hooks/useMarkerPosition'
 import { LanguageSelect } from '@/components/ui/LanguageSelect'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import type { HeaderProps } from './Header.types'
 
 export function Header({ className }: HeaderProps) {
@@ -20,7 +20,6 @@ export function Header({ className }: HeaderProps) {
   const router = useRouter()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isPending, startTransition] = useTransition()
-  const { theme, toggleTheme, mounted} = useTheme()
 
   const navigationItems = [
     { label: t('home'), anchor: 'hero' },
@@ -118,20 +117,7 @@ export function Header({ className }: HeaderProps) {
             )}
 
             {/* Theme Toggle */}
-            <button
-              onClick={() => {
-                console.log('[Header] Theme toggle button clicked')
-                toggleTheme()
-              }}
-              className="w-10 h-10 flex items-center justify-center border-2 border-light-text dark:border-dark-text hover:bg-light-primary-accent dark:hover:bg-dark-secondary-accent hover:border-light-primary-accent dark:hover:border-dark-secondary-accent transition-colors duration-0"
-              aria-label="Toggle theme"
-            >
-              {mounted && (
-                <span className="font-bold text-lg text-light-text dark:text-dark-text">
-                  {theme === 'light' ? '☾' : '☀'}
-                </span>
-              )}
-            </button>
+            <ThemeToggle />
 
             {/* Language Switcher */}
             <div className="ml-4 pl-4 border-l-2 border-light-text dark:border-dark-text">
@@ -174,23 +160,7 @@ export function Header({ className }: HeaderProps) {
 
               {/* Mobile Theme and Language Controls */}
               <div className="flex items-center gap-4 pt-4 border-t border-light-text dark:border-dark-text">
-                {/* Theme Toggle */}
-                <button
-                  onClick={() => {
-                    console.log('[Header Mobile] Theme toggle button clicked')
-                    toggleTheme()
-                  }}
-                  className="w-10 h-10 flex items-center justify-center border-2 border-light-text dark:border-dark-text hover:bg-light-primary-accent hover:dark:bg-dark-primary-accent hover:border-light-primary-accent hover:dark:border-dark-primary-accent transition-colors duration-0"
-                  aria-label="Toggle theme"
-                >
-                  {mounted && (
-                    <span className="font-bold text-lg text-light-text dark:text-dark-text">
-                      {theme === 'light' ? '☾' : '☀'}
-                    </span>
-                  )}
-                </button>
-
-                {/* Language Switcher */}
+                <ThemeToggle />
                 <LanguageSelect
                   currentLocale={locale}
                   languages={languageOptions}
