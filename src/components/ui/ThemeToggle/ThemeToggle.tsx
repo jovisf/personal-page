@@ -18,6 +18,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
         'hover:border-light-primary-accent dark:hover:border-dark-secondary-accent',
         'transition-colors duration-0',
         'text-light-text dark:text-dark-text',
+        'cursor-pointer',
         className
       )}
       aria-label="Toggle theme"

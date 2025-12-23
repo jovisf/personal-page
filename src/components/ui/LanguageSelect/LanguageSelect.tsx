@@ -51,7 +51,8 @@ export function LanguageSelect({
           'hover:bg-light-primary-accent dark:hover:bg-dark-secondary-accent',
           'hover:border-light-primary-accent dark:hover:border-dark-secondary-accent',
           'transition-colors duration-0',
-          'min-w-[120px] justify-between'
+          'min-w-[120px] justify-between',
+          'cursor-pointer'
         )}
         aria-label="Select language"
         aria-expanded={isOpen}
@@ -93,6 +94,7 @@ export function LanguageSelect({
                   'w-full flex items-center gap-2 px-3 py-2',
                   'font-bold text-sm uppercase tracking-wide text-left',
                   'transition-colors duration-0',
+                  'cursor-pointer',
                   currentLocale === language.value
                     ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
                     : 'text-light-text dark:text-dark-text hover:bg-light-secondary-accent dark:hover:bg-dark-surface'

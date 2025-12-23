@@ -35,7 +35,7 @@ export function Button({
         'hover:shadow-light-text dark:hover:shadow-dark-text',
         variants[variant],
         sizes[size],
-        disabled && 'opacity-50 cursor-not-allowed',
+        disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
         className
       )}
     >

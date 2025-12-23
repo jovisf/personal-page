@@ -7,7 +7,9 @@
     "contact": "Contacto"
   },
   "header": {
-    "welcome": "hola, bienvenido"
+    "welcome": "hola, bienvenido",
+    "menu": "Menú",
+    "close": "Cerrar"
   },
   "languages": {
     "portuguese": "Português",

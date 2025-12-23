@@ -81,7 +81,7 @@ export function Header({ className }: HeaderProps) {
           {/* Logo */}
           <button
             onClick={() => handleNavClick('hero')}
-            className="font-extrabold text-xl md:text-2xl uppercase tracking-tight text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
+            className="font-extrabold text-xl md:text-2xl uppercase tracking-tight text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors cursor-pointer"
           >
             {tHeader('welcome')}
           </button>
@@ -94,7 +94,7 @@ export function Header({ className }: HeaderProps) {
                 ref={(el) => { navRefs.current[index] = el }}
                 onClick={() => handleNavClick(item.anchor)}
                 className={cn(
-                  "font-medium text-sm uppercase tracking-wide transition-colors relative",
+                  "font-medium text-sm uppercase tracking-wide transition-colors relative cursor-pointer",
                   activeSection === item.anchor
                     ? "text-light-primary-accent dark:text-dark-primary-accent"
                     : "text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent"
@@ -137,10 +137,10 @@ export function Header({ className }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden font-bold text-sm uppercase text-light-text dark:text-dark-text"
+            className="md:hidden font-bold text-sm uppercase text-light-text dark:text-dark-text cursor-pointer hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? 'CLOSE' : 'MENU'}
+            {isMobileMenuOpen ? tHeader('close') : tHeader('menu')}
           </button>
         </div>
 
@@ -157,7 +157,7 @@ export function Header({ className }: HeaderProps) {
                 <button
                   key={index}
                   onClick={() => handleNavClick(item.anchor)}
-                  className="font-medium text-sm uppercase tracking-wide text-left text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors"
+                  className="font-medium text-sm uppercase tracking-wide text-left text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent transition-colors cursor-pointer"
                 >
                   {item.label}
                 </button>

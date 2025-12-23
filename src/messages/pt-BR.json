@@ -7,7 +7,9 @@
     "contact": "Contato"
   },
   "header": {
-    "welcome": "olá, bem-vindo"
+    "welcome": "olá, bem-vindo",
+    "menu": "Menu",
+    "close": "Fechar"
   },
   "languages": {
     "portuguese": "Português",
