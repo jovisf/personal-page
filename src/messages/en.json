@@ -9,6 +9,10 @@
   "header": {
     "welcome": "hello, welcome"
   },
+  "languages": {
+    "portuguese": "Português",
+    "english": "English"
+  },
   "hero": {
     "title": "Building software with purpose",
     "subtitle": "Software Engineering • Secure Development • Web",

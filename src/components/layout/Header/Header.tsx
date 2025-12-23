@@ -1,21 +1,23 @@
 'use client'
 
 import { useState, useTransition, useRef, useMemo } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
-import { useRouter, usePathname } from '@/lib/navigation'
+import { useTranslations } from 'next-intl'
+import { useRouter, useParams, usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useMarkerPosition } from '@/hooks/useMarkerPosition'
+import { LanguageSelect } from '@/components/ui/LanguageSelect'
 import type { HeaderProps } from './Header.types'
 
 export function Header({ className }: HeaderProps) {
   const t = useTranslations('navigation')
   const tHeader = useTranslations('header')
-  const locale = useLocale()
-  const router = useRouter()
+  const params = useParams()
   const pathname = usePathname()
+  const locale = params.locale as string || 'pt-BR'
+  const router = useRouter()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isPending, startTransition] = useTransition()
   const { theme, toggleTheme, mounted} = useTheme()
@@ -26,6 +28,11 @@ export function Header({ className }: HeaderProps) {
     { label: t('timeline'), anchor: 'timeline' },
     { label: t('stacks'), anchor: 'stacks' },
     { label: t('contact'), anchor: 'contact' },
+  ]
+
+  const languageOptions = [
+    { value: 'pt-BR', label: 'Português', flag: '🇧🇷' },
+    { value: 'en', label: 'English', flag: '🇺🇸' },
   ]
 
   const sectionIds = useMemo(() => ['hero', 'about', 'timeline', 'stacks', 'contact'], [])
@@ -44,8 +51,10 @@ export function Header({ className }: HeaderProps) {
   const handleLocaleChange = (newLocale: string) => {
     if (newLocale === locale) return
 
-    router.replace('/', { locale: newLocale })
-    router.refresh()
+    startTransition(() => {
+      const currentPath = pathname.replace(`/${locale}`, '')
+      router.push(`/${newLocale}${currentPath || '/'}`)
+    })
   }
 
   return (
@@ -120,37 +129,19 @@ export function Header({ className }: HeaderProps) {
             </button>
 
             {/* Language Switcher */}
-            <div className="flex items-center gap-2 ml-4 pl-4 border-l-2 border-light-text dark:border-dark-text">
-              <button
-                onClick={() => handleLocaleChange('pt-BR')}
-                className={cn(
-                  'font-bold text-sm uppercase px-2 py-1 transition-colors',
-                  locale === 'pt-BR'
-                    ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
-                    : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
-                )}
-              >
-                PT
-              </button>
-              <span className="text-light-text dark:text-dark-text">/</span>
-              <button
-                onClick={() => handleLocaleChange('en')}
-                className={cn(
-                  'font-bold text-sm uppercase px-2 py-1 transition-colors',
-                  locale === 'en'
-                    ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
-                    : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
-                )}
-              >
-                EN
-              </button>
+            <div className="ml-4 pl-4 border-l-2 border-light-text dark:border-dark-text">
+              <LanguageSelect
+                currentLocale={locale}
+                languages={languageOptions}
+                onLocaleChange={handleLocaleChange}
+              />
             </div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden font-bold text-sm uppercase"
+            className="md:hidden font-bold text-sm uppercase text-light-text dark:text-dark-text"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? 'CLOSE' : 'MENU'}
@@ -185,38 +176,18 @@ export function Header({ className }: HeaderProps) {
                   aria-label="Toggle theme"
                 >
                   {mounted && (
-                    <span className="font-bold text-lg">
+                    <span className="font-bold text-lg text-light-text dark:text-dark-text">
                       {theme === 'light' ? '☾' : '☀'}
                     </span>
                   )}
                 </button>
 
                 {/* Language Switcher */}
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => handleLocaleChange('pt-BR')}
-                    className={cn(
-                      'font-bold text-sm uppercase px-2 py-1 transition-colors',
-                      locale === 'pt-BR'
-                        ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
-                        : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
-                    )}
-                  >
-                    PT
-                  </button>
-                  <span className="text-light-text dark:text-dark-text">/</span>
-                  <button
-                    onClick={() => handleLocaleChange('en')}
-                    className={cn(
-                      'font-bold text-sm uppercase px-2 py-1 transition-colors',
-                      locale === 'en'
-                        ? 'bg-light-primary-accent dark:bg-dark-primary-accent text-light-background dark:text-dark-background'
-                        : 'text-light-text dark:text-dark-text hover:text-light-primary-accent dark:hover:text-dark-primary-accent'
-                    )}
-                  >
-                    EN
-                  </button>
-                </div>
+                <LanguageSelect
+                  currentLocale={locale}
+                  languages={languageOptions}
+                  onLocaleChange={handleLocaleChange}
+                />
               </div>
             </div>
           </motion.div>

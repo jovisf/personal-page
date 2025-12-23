@@ -9,6 +9,10 @@
   "header": {
     "welcome": "olá, bem-vindo"
   },
+  "languages": {
+    "portuguese": "Português",
+    "english": "English"
+  },
   "hero": {
     "title": "Construindo software com propósito",
     "subtitle": "Engenharia de Software • Desenvolvimento Seguro • Web",
