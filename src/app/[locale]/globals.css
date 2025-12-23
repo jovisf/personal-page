@@ -17,15 +17,6 @@
   --color-light-surface: #CFE1B9;
   --color-light-text: #021024;
 
-  /* Dark mode overrides */
-  @variant dark {
-    --color-background: #021024;
-    --color-primary-accent: #7DA0CA;
-    --color-secondary-accent: #5483B3;
-    --color-surface: #052659;
-    --color-text: #C1E8FF;
-  }
-
   /* Keep dark-prefixed versions for explicit usage */
   --color-dark-background: #021024;
   --color-dark-primary-accent: #7DA0CA;
@@ -37,6 +28,25 @@
 
   --border-width-3: 3px;
   --border-width-4: 4px;
+}
+
+/* Dark mode color overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #021024;
+    --color-primary-accent: #7DA0CA;
+    --color-secondary-accent: #5483B3;
+    --color-surface: #052659;
+    --color-text: #C1E8FF;
+  }
+}
+
+.dark {
+  --color-background: #021024;
+  --color-primary-accent: #7DA0CA;
+  --color-secondary-accent: #5483B3;
+  --color-surface: #052659;
+  --color-text: #C1E8FF;
 }
 
 @layer base {
